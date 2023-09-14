@@ -4,6 +4,7 @@ import styles from './page.module.css'
 import Link from 'next/link'
 import Header from './component/Header'
 import { useState } from 'react';
+import Footer from './component/Footer'
 
 interface FormData {
   author: string;
@@ -78,7 +79,7 @@ export default function Home() {
             <input  type="submit"  value="Send Message" className="btn"/>
         </form>
     </section>
-
+    <Footer/>
     </div>
   )
 }
