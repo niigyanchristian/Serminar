@@ -23,17 +23,15 @@ export default function Header({ active }: HeaderProps): JSX.Element {
         <Link href="/" className={active === 'home' ? 'active' : undefined}>
           Portal
         </Link>
-        <Link
+        {/* <Link
           href="/questions"
           className={active === 'questions' ? 'active' : undefined}
         >
           Questions
-        </Link>
+        </Link> */}
         <Link href="/answers" className={active === 'answers' ? 'active' : undefined}>
           Answers
         </Link>
-        {/* <Link href="#portfolio">Portfolio</Link>
-        <Link href="#contact">Contact</Link> */}
       </nav>
     </header>
   );
