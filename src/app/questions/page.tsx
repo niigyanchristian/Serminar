@@ -66,22 +66,17 @@ export default function page() {
   return (
     <>
     <Header active={'questions'}/>
-    {!loading&&<div style={{marginTop:'10%',marginBottom:'5%'}}>
+    {!loading&&<div className="container">
 
     {data.map((item:myQuestion)=>(
     <div key={item._id} className="questions">
         <div className="subContain">
             <h1>{item.title}</h1>
-        </div>
-        <div className="div1">
-            <Link style={{fontSize:20}} href="#about">Go to solution</Link>
-            <div style={{flexDirection:'row',alignItems:'flex-end',display:'flex'}}>
-            <p style={{fontSize:15}}>{item.createdAt.toString()}</p>
-            </div>
+            <p>{item.createdAt.toString().substring(0,10)}</p>
         </div>
         <div style={{width:'100%'}}>
             <div>
-            <p style={{fontSize:18,lineHeight: 1.2}}>{item.message}</p>
+            <p>{item.message}</p>
             </div>
 
             <div style={{display:'flex',justifyContent:'flex-end',marginTop:10}}>
@@ -95,9 +90,9 @@ export default function page() {
                 }} type="submit" value={selected == item._id?'Cancel':'Reply'} className="btn1"/>
             </div>
             {item._id == selected &&<form onSubmit={handleSubmit}>
-            <textarea name="message" value={formData.message} onChange={handleInputChange} id="" cols={30} rows={10} placeholder="Your reply"></textarea>
+            <textarea name="message" value={formData.message} onChange={handleInputChange} id="" cols={30} rows={10} placeholder="Your reply" required></textarea>
             {/* <input type="text" value={item._id} name="questionId" hidden/> */}
-            <input style={{width:'20%'}} type="submit" value="Sendg Message" className="btn"/>
+            <input type="submit" value="Sendg Message" className="btn"/>
             
             </form>}
         </div>

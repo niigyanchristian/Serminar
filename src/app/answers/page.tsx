@@ -44,18 +44,18 @@ export default function page() {
   return (
     <>
     <Header active={'answers'}/>
-    <div  style={{marginTop:'10%',marginBottom:'5%'}}>
+    <div  className="container">
 
     {questions.map((item:myQuestion,index)=>(
     <div key={item._id} style={{minHeight:0}} className="questions">
-        <div className="subContain" style={{display:'flex',justifyContent:'space-between',alignItems:'center'}}>
+        <div className="subContain">
             <h1>{item.title}</h1>
-            <h3 style={{fontSize:15,color:'#fff'}}>{item.createdAt.toString().substring(0,10)}</h3>
+            <p>{item.createdAt.toString().substring(0,10)}</p>
         </div>
         <div>
-            <p style={{fontSize:18}}>{item.message}</p>
+            <p>{item.message}</p>
 
-            <div style={{display:'flex',justifyContent:'flex-end',marginTop:10}}>
+            <div className="BtnContainer">
             <input onClick={()=>{
                 
                 if(selected == item._id){
@@ -72,16 +72,9 @@ export default function page() {
                     if(ans.questionId === item._id)
                         return(
                             <div key={ans._id} className="div3">
-                                <div className="div2">
-                                    <div style={{flexDirection:'row',alignItems:'center',display:'flex'}}>
-                                        <div style={{flexDirection:'row',display:'flex',alignItems:'center'}}>
-                                        <p style={{fontSize:20,marginLeft:10,fontWeight:'bold',color:'#fff'}}>Answer</p>
-                                        </div>
-                                    </div>
-
-                                    <div style={{flexDirection:'row',alignItems:'flex-end',display:'flex'}}>
+                                <div className="subContain">
+                                    <p>Answer</p>
                                     <p style={{fontSize:15,color:'#fff'}}>{ans.createdAt.toString().substring(0,10)}</p>
-                                    </div>
                                 </div>
                                 <div style={{padding:'2%'}}>
                                     <p style={{fontSize:18}}>{ans.message}</p>

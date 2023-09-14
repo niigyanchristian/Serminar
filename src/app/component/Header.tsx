@@ -11,9 +11,12 @@ export default function Header({ active }: HeaderProps): JSX.Element {
       <Script src="js/script.js" />
       <div style={{display:'flex',alignItems:'center'}}>
       <Image height={50} width={50} alt="Logo" src={'/images/logo.jpg'}/>
+      <div>
       <a href="#" className="logo">
-        DLCF Weija Campus Division Portal 
+        DLCF 
       </a>
+      <p className="logo">Weija Division</p>
+      </div>
       </div>
 
       <nav className="navbar">
