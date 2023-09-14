@@ -21,7 +21,7 @@ async function getQuestions() {
 export default function page() {
     const [isReply,setReply]= useState(false);
     const [loading,setLoading]= useState(false);
-    const [selected,setSelected]= useState(0);
+    const [selected, setSelected] = useState<number | null>(null);
     const [data,setData]= useState([]);
 
 
@@ -96,12 +96,15 @@ export default function page() {
 
             <div style={{display:'flex',justifyContent:'flex-end',marginTop:10}}>
             <input onClick={()=>{
-                setReply(!isReply)
-                setSelected(item._id)
-                setFormData({ ...formData, ['questionId']: item._id });
-                }} type="submit" value={isReply?'Cancel':'Reply'} className="btn1"/>
+                if(selected == item._id){
+                    setSelected(null)
+                }else{
+                    setSelected(item._id)
+                }
+                    setFormData({ ...formData, ['questionId']: item._id });
+                }} type="submit" value={selected == item._id?'Cancel':'Reply'} className="btn1"/>
             </div>
-            {isReply&& item._id == selected &&<form onSubmit={handleSubmit}>
+            {item._id == selected &&<form onSubmit={handleSubmit}>
             <textarea name="message" value={formData.message} onChange={handleInputChange} id="" cols={30} rows={10} placeholder="Your reply"></textarea>
             {/* <input type="text" value={item._id} name="questionId" hidden/> */}
             <input style={{width:'20%'}} type="submit" value="Sendg Message" className="btn"/>
