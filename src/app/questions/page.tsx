@@ -1,17 +1,7 @@
 "use client";
 import { useState,useEffect } from "react";
 import Header from "../component/Header";
-import Image from 'next/image'
 import Link from "next/link";
-import Question from "../../../models/questions";
-
-
-const data3 = [
-    {id:1,author:'Christian',message:'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque itaque debitis consectetur nemo laborum. Saepe, at? Veritatis magni ab pariatur repellendus! Incidunt perferendis itaque dicta eius iusto amet cupiditate saepe!'},
-    {id:2,author:'Ben',message:'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque itaque debitis consectetur nemo laborum. Saepe, at? Veritatis magni ab pariatur repellendus! Incidunt perferendis itaque dicta eius iusto amet cupiditate saepe!'},
-    {id:3,author:'Jaymills',message:'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque itaque debitis consectetur nemo laborum. Saepe, at? Veritatis magni ab pariatur repellendus! Incidunt perferendis itaque dicta eius iusto amet cupiditate saepe!'},
-    {id:4,author:'Fafa',message:'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque itaque debitis consectetur nemo laborum. Saepe, at? Veritatis magni ab pariatur repellendus! Incidunt perferendis itaque dicta eius iusto amet cupiditate saepe!'},
-]
 
 async function getQuestions() {
     const response = await fetch('/api/questions');
@@ -19,7 +9,6 @@ async function getQuestions() {
     return data
 }
 export default function page() {
-    const [isReply,setReply]= useState(false);
     const [loading,setLoading]= useState(false);
     const [selected, setSelected] = useState<number | null>(null);
     const [data,setData]= useState([]);
@@ -59,6 +48,7 @@ export default function page() {
              questionId:'',
               message: ''
             });
+            window.location.reload();
           } else {
             // Handle errors here
             console.error('Error:', response.statusText);
