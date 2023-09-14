@@ -89,7 +89,7 @@ export default function page() {
 
     ))}
     </div>
-    {loading&& <div style={{position:'absolute',top:0,width:'100%',height:'100%',display:'flex',justifyContent:'center',alignItems:'center',background:'#e5e5e5'}}>
+    {loading&& <div className="loaderContainer">
     <div id="loader"></div>
 </div> }
     </>
