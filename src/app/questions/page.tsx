@@ -1,7 +1,7 @@
 "use client";
 import { useState,useEffect } from "react";
-import Header from "../component/Header";
-import Link from "next/link";
+import Image from "next/image";
+
 
 async function getQuestions() {
     const response = await fetch('/api/questions');
@@ -65,7 +65,17 @@ export default function page() {
       };
   return (
     <>
-    <Header active={'questions'}/>
+    <header className="header">
+      <div style={{display:'flex',alignItems:'center'}}>
+      <Image height={50} width={50} alt="Logo" src={'/images/logo.jpg'}/>
+      <div>
+      <a href="#" className="logo">
+        DLCF 
+      </a>
+      <p className="logo">Weija Division</p>
+      </div>
+      </div>
+    </header>
     {!loading&&<div className="container">
 
     {data.map((item:myQuestion)=>(
