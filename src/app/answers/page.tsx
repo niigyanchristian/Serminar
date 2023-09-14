@@ -35,9 +35,9 @@ export default function page() {
         async function fetchData() {
             const response1 = await getAnswers();
             const response2 = await getQuestions();
-            // setQuestion(response2.data);
-            // setAnswer(response1.data);
-            // setLoading(false)
+            setQuestion(response2.data);
+            setAnswer(response1.data);
+            setLoading(false)
         } 
         fetchData();
       }, []);
