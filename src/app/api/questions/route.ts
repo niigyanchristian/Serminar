@@ -4,7 +4,7 @@ import connectDB from '../../../../utils/connectMongoDB';
 
 export async function GET() {
     console.log('======CONNECTING DATABASE=======');
-    connectDB()
+    await connectDB()
     console.log('=======DATABASE CONNECTED========');
 
 
