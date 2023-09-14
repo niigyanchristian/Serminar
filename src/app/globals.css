@@ -34,9 +34,7 @@ body {
   color: var(--text-color);
 }
 p{
-  /* fontSize:18,lineHeight: 1.2 */
   font-size: 1.5rem;
-  /* line-height: 2rem; */
 }
 
 section{
@@ -187,19 +185,16 @@ background-color: var(--bg-color);
   box-shadow: none;
 }
 .BtnContainer{
-  /* display:'flex',justifyContent:'flex-end',marginTop:10 */
   display: flex;
   justify-content: flex-end;
   margin-top: 1rem
 
 }
 .questions{
-  /* background-color: #0ef; */
   border: solid #bbb;
   border-width: 1px;
   width: 80%;
   margin: auto;
-  /* min-height: 40vh; */
   margin-top: 5vh;
   padding: 3rem 2% 2rem;
   transition: .5s ease;
@@ -211,7 +206,6 @@ background-color: var(--bg-color);
 }
 
 .subContain{
-  /* border-width: 1px; */
   background: var(--gradient-two);
   font-size: 1rem;
   padding: 10px;
@@ -232,7 +226,6 @@ background-color: var(--bg-color);
 
 .answers{
   width: 80%;
-  /* background-color: red; */
   min-height: 10vh;
   border-width: 1px;
   padding: 2%;
@@ -325,7 +318,6 @@ background-color: var(--bg-color);
 }
 
 .container{
-  /* marginTop:'10%',marginBottom:'5%' */
   margin-top: 15rem;
   margin-bottom: 7.5rem;
 }
@@ -353,14 +345,10 @@ background-color: var(--bg-color);
     margin: 0.1rem 0;
   }
   .contact{
-    margin-top: 15rem;
-    /* margin-bottom: 7.5rem; */
+    margin-top: 10rem;
     }
 }
 @media (max-width: 800px){
-  /* .subContain{
-    flex-wrap: wrap;
-  } */
   .answers{
     margin: 2rem auto;
   }
