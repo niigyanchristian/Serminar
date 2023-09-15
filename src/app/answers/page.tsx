@@ -63,7 +63,7 @@ export default function page() {
                 }else{
                     setSelected(item._id)
                 }
-                }} type="submit" value={selected == item._id ?'Cancel':'Answers'} className="btn1"/>
+                }} type="submit" value={selected == item._id ?'Close':'Answers'} className="btn1"/>
             </div>
             {item._id == selected &&<form action="#">
             
