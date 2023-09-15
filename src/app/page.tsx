@@ -68,14 +68,14 @@ export default function Home() {
         </div>
         <form onSubmit={handleSubmit}>
             <div className="input-box">
-                <input type="text" name='author' value={formData.author} onChange={handleInputChange} placeholder="Name"/>
-                <input type="email" name='email' value={formData.email} onChange={handleInputChange} placeholder="Email"/>
+                <input type="text" name='author' value={formData.author} onChange={handleInputChange} placeholder="Name" required/>
+                <input type="email" name='email' value={formData.email} onChange={handleInputChange} placeholder="Email" required/>
             </div>
             <div className="input-box">
-                <input type="text" name='number' value={formData.number} onChange={handleInputChange} placeholder="Mobile Number"/>
-                <input type="text" name='title' value={formData.title} onChange={handleInputChange} placeholder="Title"/>
+                <input type="text" name='number' value={formData.number} onChange={handleInputChange} placeholder="Mobile Number" required/>
+                <input type="text" name='title' value={formData.title} onChange={handleInputChange} placeholder="Title"required />
             </div>
-            <textarea name="message" value={formData.message} onChange={handleInputChange}  cols={30} rows={10} placeholder="Your Question"></textarea>
+            <textarea name="message" value={formData.message} onChange={handleInputChange}  cols={30} rows={10} placeholder="Your Question" required></textarea>
             <input  type="submit"  value="Send Message" className="btn"/>
         </form>
     </section>
