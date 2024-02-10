@@ -1,3 +1,6 @@
+# Introduction
+Single-handedly spearheaded the development of a web application, creating a platform where users can pose questions anonymously, with only the asker having access to the provided answers.
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
